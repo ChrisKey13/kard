@@ -7,8 +7,12 @@
   </li>
   <% end %>
 </ul>
-<% @lists.each do |list| %>
-  <%= link_to list.title, list %>
-<% end %>
+<ol>
+  <% @lists.each do |list| %>
+  <li>
+      <%= link_to list.title, list %>
+    <% end %>
+  </li>
+</ol>
 
 <%= link_to 'Add A New List', new_list_path, class: 'btn btn-primary'  %>
