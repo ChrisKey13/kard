@@ -1,0 +1,14 @@
+<h1>Welcome to your new world of learning</h1>
+<p>We want to be the reference to help programmers learn the following languages:</p>
+<ul>
+  <% @languages.each do |language| %>
+  <li>
+    <%= language.name %>
+  </li>
+  <% end %>
+</ul>
+<% @lists.each do |list| %>
+  <%= link_to list.title, list %>
+<% end %>
+
+<%= link_to 'Add A New List', new_list_path, class: 'btn btn-primary'  %>
