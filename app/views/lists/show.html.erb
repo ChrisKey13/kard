@@ -24,7 +24,7 @@
         <% else %>
           <p>No photo to displayed</p>
         <% end %>
-        <%= link_to 'Edit', list_flashcard_path(flashcard) %>
+        <%= link_to 'Edit', edit_list_flashcard_path(flashcard) %>
         <%= link_to flashcard_path(flashcard), method: :delete, data: { confirm: "Are you sure?" } do %>
         <h1>Delete</h1>
         <% end %>

@@ -1,6 +1,10 @@
 class FlashcardsController < ApplicationController
-  before_action :set_list, only: [:create, :update]
+  before_action :set_list, only: [:create, :edit]
   before_action :set_flashcard, only: [:edit, :destroy]
+
+  def show
+
+  end
 
   def create
     @flashcard = Flashcard.new(set_params)
@@ -13,11 +17,10 @@ class FlashcardsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
-    @flashcard = Flashcard.new(set_params)
-    @flashcard.list = @list
     if @flashcard.update(set_params)
       redirect_to list_flashcard_path(@flashcard)
     else
