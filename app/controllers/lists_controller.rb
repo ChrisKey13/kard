@@ -36,8 +36,11 @@ class ListsController < ApplicationController
   end
 
   def destroy
-    @list.destroy
-    redirect_to root_path, notice: 'Your list was successfully destroyed'
+    if @list.destroy
+      redirect_to root_path, notice: 'Your list was successfully destroyed'
+    else
+      render :show
+    end
   end
 
   private
