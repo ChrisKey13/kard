@@ -45,6 +45,6 @@ class FlashcardsController < ApplicationController
   end
 
   def set_params
-    params.require(:flashcard).permit(:title, :content, :language_id)
+    params.require(:flashcard).permit(:title, :content, :photo, :language_id)
   end
 end

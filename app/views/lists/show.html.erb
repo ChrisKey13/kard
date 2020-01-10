@@ -6,9 +6,7 @@
 
 <%= link_to 'Edit Your List', edit_list_path(@list) %>
 
-<%= link_to list_path(@list), method: :delete, data: { confirm: 'Are you sure?' } do %>
-  Delete
-<% end %>
+<%= link_to 'Destroy', list_path(@list), method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <div>
 
@@ -19,14 +17,12 @@
         <%= flashcard.title %>
         <%= flashcard.content %>
         <%= flashcard.language.name %>
+        <%= link_to 'Edit', edit_list_flashcard_path(flashcard) %>
+        <%= link_to "Delete", flashcard_path(flashcard), method: :delete, data: { confirm: "Are you sure?" } %>
         <% if flashcard.photo.attached? %>
           <%= cl_image_tag flashcard.photo.key, height: 300, width: 400, crop: :fill %>
         <% else %>
           <p>No photo to displayed</p>
-        <% end %>
-        <%= link_to 'Edit', edit_list_flashcard_path(flashcard) %>
-        <%= link_to flashcard_path(flashcard), method: :delete, data: { confirm: "Are you sure?" } do %>
-        <h1>Delete</h1>
         <% end %>
       <% end %>
       </li>
