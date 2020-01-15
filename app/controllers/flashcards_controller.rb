@@ -1,5 +1,5 @@
 class FlashcardsController < ApplicationController
-  before_action :set_list, only: [:create, :edit]
+  before_action :set_list, only: [:create]
   before_action :set_flashcard, only: [:edit, :update, :destroy]
 
   def show

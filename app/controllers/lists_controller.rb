@@ -1,11 +1,16 @@
 class ListsController < ApplicationController
 
-  before_action :set_list, only: [ :show, :edit, :update, :destroy]
+  before_action :set_list, only: [:show, :edit, :update, :destroy]
 
   def index
-    @lists = List.all
     @languages = Language.all
+    if params[:search].present?
+      @lists = List.where(title: params[:query])
+    else
+      @lists = List.all
+    end
   end
+
 
   def show
     @flashcard = Flashcard.new
