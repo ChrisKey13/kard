@@ -17,3 +17,8 @@ require("channels")
 
 require("trix")
 require("@rails/actiontext")
+// Replace with your own values
+//= require algolia/v3/algoliasearch.min
+//= require algolia/typeahead.jquery
+//= require hogan
+import "../plugins/instantsearch";

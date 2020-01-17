@@ -1,16 +1,15 @@
 class ListsController < ApplicationController
-
   before_action :set_list, only: [:show, :edit, :update, :destroy]
 
   def index
     @languages = Language.all
-    if params[:search].present?
-      @lists = List.where(title: params[:query])
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR description ILIKE :query"
+      @lists = List.where(sql_query, query: "%#{params[:query]}%")
     else
       @lists = List.all
     end
   end
-
 
   def show
     @flashcard = Flashcard.new

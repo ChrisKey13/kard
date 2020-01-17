@@ -4,8 +4,6 @@ class Flashcard < ApplicationRecord
   has_one_attached :photo
   validates :title, presence: :true
   validates :content, presence: :true
-  include PgSearch::Model
-  multisearchable against: [:title, :content]
 
   def self.upload(photo)
     Cloudinary::Uploader.upload(photo)
