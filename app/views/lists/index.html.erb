@@ -6,10 +6,10 @@
       <%= language.name %>
     <% end %>
   </span>
-  <ol>
+  <ol class="lists">
     <% @lists.each do |list| %>
     <li>
-        <%= link_to list.title, list %>
+      <%= link_to list.title, list %>
     <% end %>
     </li>
   </ol>
