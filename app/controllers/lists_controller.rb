@@ -4,8 +4,7 @@ class ListsController < ApplicationController
   def index
     @languages = Language.all
     if params[:query].present?
-      sql_query = "title ILIKE :query OR description ILIKE :query"
-      @lists = List.where(sql_query, query: "%#{params[:query]}%")
+      @lists = List.search_by_title_and_description(params[:query])
     else
       @lists = List.all
     end
