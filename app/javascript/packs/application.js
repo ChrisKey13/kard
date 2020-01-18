@@ -22,3 +22,5 @@ require("@rails/actiontext")
 //= require algolia/typeahead.jquery
 //= require hogan
 import "../plugins/instantsearch";
+
+import "controllers"
